@@ -1,0 +1,2 @@
+basejava.Interfacable
+basejava.CheckInterface
