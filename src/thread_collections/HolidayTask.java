@@ -1,7 +1,8 @@
 package thread_collections;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,15 +17,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import org.apache.commons.io.FileUtils;
 
 public class HolidayTask {
     
     private static int days = 5;
-    private static final File file = new File("./src/data/holidays.txt");
+    private static final String file = "./src/data/holidays.txt";
     
     public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-        CopyOnWriteArrayList<String> srcList = new CopyOnWriteArrayList( FileUtils.readLines(file, "UTF-8"));
+//        CopyOnWriteArrayList<String> srcList = new CopyOnWriteArrayList( Files.readAllLines(Paths.get(file)));
+        CopyOnWriteArrayList<String> srcList = new CopyOnWriteArrayList( new ArrayList());
         ConcurrentSkipListSet holidaySet = new ConcurrentSkipListSet();
         ConcurrentSkipListMap<String, String> holidayTypes = new ConcurrentSkipListMap<>();
         ConcurrentSkipListMap<Date, Integer> dailyHolidayCount = new ConcurrentSkipListMap<>();

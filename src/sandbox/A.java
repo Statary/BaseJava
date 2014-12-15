@@ -33,15 +33,15 @@ class D {
 }
 
 // SOLVO TASK - unknown cortect given
-class X
+class XX
 {
-  X x1 = this;
+  XX x1 = this;
 }
-class X1 extends X
+class X1 extends XX
 {
-//  X x1 = this;
+//  XX x1 = this;
 }
 class X2 extends X1
 {
-//  X x1 = this;
+//  XX x1 = this;
 }
